@@ -16,6 +16,7 @@
 
 package com.example.android.codelabs.paging.ui
 
+import android.arch.paging.PagedListAdapter
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
@@ -25,7 +26,7 @@ import com.example.android.codelabs.paging.model.Repo
 /**
  * Adapter for the list of repositories.
  */
-class ReposAdapter : ListAdapter<Repo, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
+class ReposAdapter : PagedListAdapter<Repo, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return RepoViewHolder.create(parent)
